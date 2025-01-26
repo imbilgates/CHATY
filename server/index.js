@@ -5,6 +5,7 @@ const http = require('http');
 const cors = require('cors');
 const router = require('./router');
 const { addUser, removeUser, getUser, getUsersInRoom, getAllRooms } = require('./users');
+const path = require('path');
 
 const PORT = process.env.PORT || 5000;
 
@@ -75,5 +76,12 @@ io.on('connection', (socket) => {
 });
 
 app.use(router);
+
+
+// Serve the client app
+app.use(express.static(path.join(__dirname, '../client', 'build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'));
+});
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
