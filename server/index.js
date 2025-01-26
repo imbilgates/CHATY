@@ -3,7 +3,6 @@ const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
 const cors = require('cors');
-const router = require('./router');
 const { addUser, removeUser, getUser, getUsersInRoom, getAllRooms } = require('./users');
 const path = require('path');
 
@@ -75,7 +74,6 @@ io.on('connection', (socket) => {
     });
 });
 
-app.use(router);
 
 
 // Serve the client app
