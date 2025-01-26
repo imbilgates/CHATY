@@ -1,0 +1,469 @@
+html,
+body {
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.outerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e3e3e4;
+  padding: 10px;
+  /* Add padding to prevent content from touching the edges */
+  box-sizing: border-box;
+  /* Include padding and border in element's total width and height */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 8px;
+  height: 75%;
+  width: 35%;
+  max-width: 100%;
+  /* Ensure container doesn't exceed the screen width */
+  max-height: 100%;
+  /* Ensure container doesn't exceed the screen height */
+}
+
+@media (max-width: 480px) {
+  .outerContainer {
+    height: 100%;
+    padding: 0;
+    /* Remove padding on small screens */
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    /* Remove border radius for full screen on mobile */
+  }
+}
+
+@media (min-width: 480px) and (max-width: 1200px) {
+  .container {
+    width: 70%;
+    height: 70%;
+    /* Adjust height for better visibility on tablets */
+  }
+}
+
+.infoBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2979FF;
+  border-radius: 4px 4px 0 0;
+  height: 60px;
+  width: 100%;
+  padding: 20px;
+  /* Added padding to the infoBar */
+  box-sizing: border-box;
+  /* Ensures padding is included in height/width */
+}
+
+.leftInnerContainer {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.rightInnerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.rightInnerContainer>div:first-child {
+  margin-right: 20px;
+}
+
+.rightInnerContainer>div:last-child img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+
+.usernameAndParticipants {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+  /* Added padding to maintain consistent spacing */
+  flex-wrap: nowrap;
+  /* Prevents flex items from wrapping */
+  overflow: hidden;
+  /* Ensures content stays within the container */
+  text-overflow: ellipsis;
+  /* Adds ellipsis for overflow text */
+}
+
+.usernameAndParticipants h5 {
+  margin: 0;
+  margin-bottom: 4px;
+  /* Adjust this value to reduce the gap */
+}
+
+.usernameAndParticipants p {
+  display: inline;
+  /* Makes the p tag display inline */
+  white-space: nowrap;
+  /* Prevents the text from wrapping to the next line */
+  margin: 0;
+  padding: 0;
+  /* Ensures no extra space is added */
+  overflow: hidden;
+  /* Ensures content stays within the container */
+  text-overflow: ellipsis;
+  /* Adds ellipsis for overflow text */
+}
+
+
+
+
+.onlineIcon {
+  margin-right: 5%;
+}
+
+.form {
+  display: flex;
+  border-top: 2px solid #D3D3D3;
+}
+
+.input {
+  border: none;
+  border-radius: 0;
+  padding: 5%;
+  width: 80%;
+  font-size: 1.2em;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.sendButton {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #2979FF;
+  padding: 20px;
+  display: inline-block;
+  border: none;
+  width: 20%;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.joinOuterContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  background-color: #1A1A1D;
+}
+
+.joinInnerContainer {
+  width: 20%;
+}
+
+
+.heading {
+  color: white;
+  font-size: 2.5em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+.button {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #2979FF;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .joinOuterContainer {
+    height: 100%;
+  }
+
+  .joinInnerContainer {
+    width: 90%;
+  }
+
+
+}
+
+button:focus {
+  outline: 0;
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
+.joinChatContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.joinChatContainer h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+}
+
+/* msg parent */
+.messages {
+  overflow: auto;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.messagesTheme {
+  background-color: #000000;
+}
+
+@media (max-width: 600px) {
+  .messages {
+    padding: 0;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 960px) {
+  .messages {
+    padding: 0;
+  }
+}
+
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  color: white;
+  height: 60%;
+  justify-content: space-between;
+}
+
+.activeContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50%;
+}
+
+.activeItem {
+  display: flex;
+  align-items: center;
+}
+
+.activeContainer img {
+  padding-left: 10px;
+}
+
+.textContainer h1 {
+  margin-bottom: 0px;
+}
+
+@media (min-width: 320px) and (max-width: 1200px) {
+  .textContainer {
+    display: none;
+  }
+}
+
+.room-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.room-item {
+  color: #FFFFFF;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+  background-color: #333;
+  /* Add a background color for better visibility */
+}
+
+.room-item:hover {
+  border-color: #67c2ef;
+}
+
+.room-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+/*  */
+
+.messageBox {
+  background: #F3F3F3;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: white;
+  display: inline-block;
+  max-width: 80%;
+}
+
+.messageText {
+  width: 100%;
+  letter-spacing: 0;
+  float: left;
+  font-size: 1.1em;
+  word-wrap: break-word;
+}
+
+.messageText img {
+  vertical-align: middle;
+}
+
+.messageContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
+  margin-top: 3px;
+}
+
+.sentText {
+  display: flex;
+  align-items: center;
+  font-family: Helvetica;
+  color: #828282;
+  letter-spacing: 0.3px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.colorDark {
+  color: #353535;
+}
+
+.backgroundBlue {
+  background: #2979FF;
+}
+
+.backgroundLight {
+  background: #F3F3F3;
+}
+
+.bot {
+  background: #42a5f5;
+}
+
+/*  */
+.whatsapp {
+  border-radius: 90%;
+  background-color: #00E676;
+  cursor: pointer;
+}
+
+/* theme */
+.theme {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.infoBarDark {
+  background-color: #0eb345;
+}
+
+.sendButtonDark {
+  background-color: #0eb345;
+}
+
+.messageDark {
+  background-color: #0eb345;
+}
+
+.outerContainerDark {
+  background-color: #000000;
+}
+
+.textContainerDark {
+  color: #000000;
+}
+
+.textContainerDark h1,
+.textContainerDark h2,
+.textContainerDark p {
+  color: black;
+  /* Ensure all heading and paragraph text is black */
+}
+.whatsappDark{
+  background-color: #2979FF;
+}
