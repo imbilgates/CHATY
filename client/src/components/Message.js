@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { Snackbar } from '@mui/material';
+import { Snackbar, SnackbarContent } from '@mui/material';
 import ReactEmoji from 'react-emoji';
 import { ThemeContext } from '../context/ThemeContext';
 
@@ -10,7 +10,7 @@ const Message = ({ message: { text, user, image }, name }) => {
   const trimmedName = name.trim().toLowerCase();
   const svgAvatar = localStorage.getItem('photo');
 
-  const isSentByCurrentUser = user === trimmedName;
+  const isSentByCurrentUser = user.toLowerCase() === trimmedName;
 
   useEffect(() => {
     if (user === 'admin') {
@@ -28,19 +28,22 @@ const Message = ({ message: { text, user, image }, name }) => {
         open={open}
         onClose={handleClose}
         autoHideDuration={5000}
-        message={
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <div dangerouslySetInnerHTML={{ __html: image }} style={{ width: '20px', height: '20px', marginRight: '10px' }}></div>
-            {text}
-          </div>
-        }
-        anchorOrigin={{
-          vertical: 'center',
-          horizontal: 'center',
-        }}
-      />
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        sx={{ top : '60px'}}
+      >
+        <SnackbarContent
+          sx={{ backgroundColor: '#4CAF50', color: '#fff' }} // Green background & white text
+          message={
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div dangerouslySetInnerHTML={{ __html: image }} style={{ width: '20px', height: '20px', marginRight: '10px' }}></div>
+              {text}
+            </div>
+          }
+        />
+      </Snackbar>
+
       {isSentByCurrentUser ? (
-        <div className="messageContainer justifyEnd">
+        <div className="messageContainer justifyStart ">
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div dangerouslySetInnerHTML={{ __html: svgAvatar }} style={{ width: '20px', height: '20px', marginRight: '10px' }} />
             <p className="sentText pr-10">{trimmedName}</p>
@@ -50,7 +53,7 @@ const Message = ({ message: { text, user, image }, name }) => {
           </div>
         </div>
       ) : (
-        <div className="messageContainer justifyStart">
+        <div className="messageContainer justifyEnd">
           {user !== 'admin' &&
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <div dangerouslySetInnerHTML={{ __html: image }} style={{ width: '20px', height: '20px', marginRight: '10px' }} />

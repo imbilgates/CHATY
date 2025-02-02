@@ -31,7 +31,7 @@ const WhatsApp = ({ textContent }) => {
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
             <i style={{ fontSize: '30px' }} className={`bx bxl-whatsapp whatsapp ${!theme &&"whatsappDark"}`}></i>
-            <b style={{ marginRight: '8px', color: 'rgba(0, 0, 0, 0.5)' }}>{textContent || ""}</b>
+            <b style={{ marginRight: '5px', color: `${!theme ? 'rgba(0, 53, 197, 0.91)' : 'rgba(0, 197, 10, 0.91)' }` }}>{textContent || ""}</b>
         </div>
     )
 }

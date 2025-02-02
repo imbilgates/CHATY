@@ -62,10 +62,16 @@ body {
   height: 60px;
   width: 100%;
   padding: 20px;
-  /* Added padding to the infoBar */
   box-sizing: border-box;
-  /* Ensures padding is included in height/width */
 }
+
+@media (max-width: 768px) { 
+  /* Apply margin-top only on mobile devices */
+  .infoBar {
+    margin-top: 80px;
+  }
+}
+
 
 .leftInnerContainer {
   flex: 0.5;
@@ -355,7 +361,7 @@ body {
 .messageBox {
   background: #F3F3F3;
   border-radius: 20px;
-  padding: 5px 20px;
+  padding: 3px 20px;
   color: white;
   display: inline-block;
   max-width: 80%;
@@ -376,7 +382,7 @@ body {
 .messageContainer {
   display: flex;
   justify-content: flex-end;
-  padding: 0 5%;
+  padding: 0 2%;
   margin-top: 3px;
 }
 

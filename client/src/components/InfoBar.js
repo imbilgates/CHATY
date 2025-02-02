@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import closeIcon from '../icons/closeIcon.png';
 import SimpleDialog from '../MUI/SimpleDialog';
 import Avatar from '@mui/material/Avatar';
 import { StyledBadge } from '../MUI/MaterialUIStyled';
@@ -86,7 +85,7 @@ const InfoBar = ({ users, name, room, image, deleteMessages }) => {
         <img onClick={handleDeleteDialogOpen} alt='delete icon' src={"./delete.png"} style={{ width: '35px', height: '35px', marginRight: '20px' }}>
         </img>
         <div onClick={handleLeaveChatDialogOpen}>
-          <img src={closeIcon} alt="close icon" style={{ width: '15px', height: '15px', marginRight: '5px' }} />
+          <img src={'./exit.png'} alt="close icon" style={{ width: '25px', height: '25px', marginRight: '5px', font: '10px' }} />
         </div>
       </div>
 
